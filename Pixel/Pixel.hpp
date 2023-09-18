@@ -21,11 +21,6 @@
 #define BRIGHT_WHITE 0xF0
 
 namespace Pixel {
-    void Init(int Time = 100) {
-        Pixel::Time(Time);
-        Pixel::Clear();
-    }
-
     void Time(int Time) {
         Sleep(Time);
     }
@@ -39,11 +34,11 @@ namespace Pixel {
         COORD coord;
         coord.X = x;
         coord.Y = y;
-        SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+        SetConsoleCursorPosition(hc, coord);
 
         SetConsoleTextAttribute(hc, hexCode);
         std::cout << ' ';
-        SetConsoleTextAttribute(hc, 0x00);
+        SetConsoleTextAttribute(hc, 0x07);
     }
     
     void Text(std::string Value, int x, int y) {
@@ -60,6 +55,11 @@ namespace Pixel {
             SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
             std::cout << Value[i];
         }
-        SetConsoleTextAttribute(hc, 0x00);
+        SetConsoleTextAttribute(hc, 0x07);
+    }
+
+    void Init(int Time = 150) {
+        Pixel::Time(Time);
+        Pixel::Clear();
     }
 }
