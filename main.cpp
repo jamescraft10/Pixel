@@ -1,9 +1,8 @@
-#include "Pixel.hpp"
+#include "Pixel/Pixel.hpp"
 
 int main() {
     while(true) {
-        Pixel::Time(100);
-        Pixel::Clear();
+        Pixel::Init();
 
         Pixel::Text("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 0, 0);
         Pixel::Pixel(BLACK, 0, 1);
