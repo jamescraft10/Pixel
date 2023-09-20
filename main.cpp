@@ -10,6 +10,7 @@ int main(int argc, char *argv[]) {
     Pixel::Print("Hello, World!\n");
     Pixel::ResetColor();
     Pixel::TurnOffFormatting();
+
     Pixel::SetCords(11, 15);
     Pixel::BackgroundColor(0,0,0);
     Pixel::TextColor(255,255,255);
