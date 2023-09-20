@@ -3,6 +3,10 @@
 #include <cstdlib>
 
 namespace Pixel {
+    void SetCords(int x, int y) {
+        std::cout << "\033[" << x << ";" << y << "H";
+    }
+
     void Print(std::string Value) {
         std::cout << Value;
     }
